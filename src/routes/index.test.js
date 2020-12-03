@@ -1,9 +1,10 @@
 import React from 'react';
-import { createMemoryHistory } from 'history';
 import { Router } from 'react-router-dom';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { createMemoryHistory } from 'history';
 
-import Routes from '.';
 import { render, screen } from '@testing-library/react';
+import Routes from '.';
 
 test('Must render/navigate to comics page', () => {
     const history = createMemoryHistory();
@@ -13,7 +14,9 @@ test('Must render/navigate to comics page', () => {
         </Router>
     );
 
-    expect(screen.getByText('Comics')).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(
+        'Comics'
+    );
 });
 
 test('Must render/navigate to characters page', () => {
@@ -25,5 +28,7 @@ test('Must render/navigate to characters page', () => {
         </Router>
     );
 
-    expect(screen.getByText('Characters')).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(
+        'Characters'
+    );
 });

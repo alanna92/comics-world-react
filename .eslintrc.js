@@ -4,7 +4,13 @@ module.exports = {
         es2021: true,
         jest: true,
     },
-    extends: ['airbnb', 'airbnb/hooks', 'prettier', 'prettier/react'],
+    extends: [
+        'airbnb',
+        'airbnb/hooks',
+        'prettier',
+        'prettier/react',
+        'plugin:jest/recommended',
+    ],
     parserOptions: {
         ecmaFeatures: {
             jsx: true,
@@ -19,5 +25,6 @@ module.exports = {
             'warn',
             { extensions: ['.jsx', 'js'] },
         ],
+        'import/prefer-default-export': 'off',
     },
 };

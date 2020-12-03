@@ -1,7 +1,11 @@
 import React from 'react';
+import Header from '../../components/header';
 
 export default function Comics() {
     return (
-        <h1>Comics</h1>
+        <>
+            <Header />
+            <h1>Comics</h1>
+        </>
     );
 }
